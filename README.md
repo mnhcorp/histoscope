@@ -2,7 +2,7 @@
 
 **Expert-grounded inspection of sparse autoencoder features in histopathology foundation models.**
 
-[Paper](paper/histoscope_icml2026.pdf) | [Evaluation protocol](protocol/EVALUATION_PROTOCOL.md) | [SAE configuration](configs/uni_spider_topk250.json) | [Example panels](examples) | [Citation](#citation)
+[Paper](https://openreview.net/forum?id=UIqw2I1CQk) | [PDF](paper/histoscope_icml2026.pdf) | [Evaluation protocol](protocol/EVALUATION_PROTOCOL.md) | [SAE configuration](configs/uni_spider_topk250.json) | [Example panels](examples) | [Citation](#citation)
 
 Histoscope is an interactive dashboard for examining sparse autoencoder (SAE) features learned from pathology foundation-model embeddings. It connects feature activations to tissue classes and to the image patches that activate each feature most strongly, allowing domain experts to inspect whether a feature represents a coherent morphological concept.
 
@@ -95,7 +95,8 @@ paper/            Workshop paper
   title     = {Histoscope: Expert-Grounded Inspection of Sparse Autoencoder Features in Histopathology Foundation Models},
   author    = {Hossain, Mirza Nasir and Bell, Sarah L. and Bryson, Gareth and Harris-Birtill, David},
   booktitle = {Mechanistic Interpretability Workshop at the 43rd International Conference on Machine Learning},
-  year      = {2026}
+  year      = {2026},
+  url       = {https://openreview.net/forum?id=UIqw2I1CQk}
 }
 ```
 
