@@ -21,7 +21,9 @@ histoscope.py                 inspect the generated artifacts
 
 ## From scratch
 
-The embedding cache must contain `train/`, `test/`, and `label_map.json`. Each split contains matching `emb_*.pt`, `labels_*.pt`, and `paths_*.json` shards. Training statistics are stored in the training split and reused for test normalization.
+Obtain [SPIDER-colorectal](https://huggingface.co/datasets/histai/SPIDER-colorectal) and [UNI](https://huggingface.co/MahmoodLab/UNI) directly from their gated upstream repositories. Generate 1,024-dimensional UNI CLS-token embeddings for the SPIDER patches, preserving labels and local image paths in the cache contract below. The release intentionally does not redistribute either upstream resource or generated UNI embeddings.
+
+The embedding cache must contain `train/`, `test/`, and `label_map.json`. Each split contains matching `emb_*.pt`, `labels_*.pt`, and `paths_*.json` shards. Training statistics are stored in the training split and reused for test normalization. The current pipeline begins at this precomputed-embedding boundary; embedding extraction itself is not performed by `run_pipeline.py`.
 
 ```bash
 python pipeline/run_pipeline.py \

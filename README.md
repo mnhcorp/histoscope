@@ -2,7 +2,7 @@
 
 **Expert-grounded inspection of sparse autoencoder features in histopathology foundation models.**
 
-[Paper](https://openreview.net/forum?id=UIqw2I1CQk) | [PDF](paper/histoscope_icml2026.pdf) | [Evaluation protocol](protocol/EVALUATION_PROTOCOL.md) | [SAE configuration](configs/uni_spider_topk250.json) | [Example panels](examples) | [Citation](#citation)
+[Paper](https://openreview.net/forum?id=UIqw2I1CQk) | [PDF](paper/histoscope_icml2026.pdf) | [SAE checkpoint](https://huggingface.co/mnhcorp/histoscope-uni-spider-sae) | [Evaluation protocol](protocol/EVALUATION_PROTOCOL.md) | [SAE configuration](configs/uni_spider_topk250.json) | [Example panels](examples) | [Citation](#citation)
 
 Histoscope is an interactive dashboard for examining sparse autoencoder (SAE) features learned from pathology foundation-model embeddings. It connects feature activations to tissue classes and to the image patches that activate each feature most strongly, allowing domain experts to inspect whether a feature represents a coherent morphological concept.
 
@@ -25,13 +25,13 @@ The accompanying study used a fixed TopK SAE trained on UNI embeddings from SPID
 | Evaluation protocol | [`protocol/`](protocol) | Vocabulary, rater instructions, thresholds, and feature-sampling procedure |
 | Reviewed examples | [`examples/`](examples) | Real top-activating patch panels used for qualitative illustration |
 | Workshop paper | [`paper/`](paper) | Camera-ready ICML Mechanistic Interpretability Workshop paper |
-| Checkpoint and caches | [`models/README.md`](models/README.md) | Distributed separately; never stored in Git |
+| Checkpoint and caches | [`models/README.md`](models/README.md) | Verified checkpoint on Hugging Face; generated caches remain local |
 
-The release does **not** contain raw rater responses or the 100-feature expert-label dataset. Those annotations form part of a later extended study. SPIDER images and UNI weights are also not redistributed here.
+The release does **not** contain raw rater responses or the 100-feature expert-label dataset. Those annotations form part of a later extended study. [SPIDER-colorectal](https://huggingface.co/datasets/histai/SPIDER-colorectal) images and [UNI](https://huggingface.co/MahmoodLab/UNI) weights are governed by their upstream gated-access terms and are not redistributed here.
 
 ## Quick start
 
-Histoscope requires a model directory containing the generated interactive cache described in [`models/README.md`](models/README.md).
+Histoscope requires the released SAE checkpoint and a generated interactive cache described in [`models/README.md`](models/README.md).
 
 ```bash
 git clone https://github.com/mnhcorp/histoscope.git
@@ -61,7 +61,7 @@ cached UNI embeddings -> TopK SAE training -> feature analysis/cache export -> H
 
 The paper's SAE maps 1,024-dimensional UNI embeddings to a 49,152-feature dictionary using tied encoder/decoder weights, a learned pre-encoder bias, and per-patch TopK activation with `k=250`. It was trained for two epochs with batch size 32, learning rate `1e-4`, seed 42, z-score normalization, and row-wise L2 normalization. Test embeddings use training-split normalization statistics in the corrected release pipeline.
 
-The machine-readable receipt is [`configs/uni_spider_topk250.json`](configs/uni_spider_topk250.json). The checkpoint download and checksum will be added to [`models/README.md`](models/README.md) once the large release artifact is uploaded.
+The machine-readable receipt is [`configs/uni_spider_topk250.json`](configs/uni_spider_topk250.json). Download and checksum verification instructions are in [`models/README.md`](models/README.md).
 
 ## Evaluation protocol
 
