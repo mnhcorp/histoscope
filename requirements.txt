@@ -1,0 +1,19 @@
+dash>=2.17,<4
+numpy>=1.26
+Pillow>=10
+plotly>=5.22
+matplotlib>=3.8
+scikit-learn>=1.4
+scipy>=1.12
+
+# Study applications
+gradio>=4.44
+
+# SAE training and optional local image descriptions
+torch>=2.3
+tqdm>=4.66
+psutil>=5.9
+
+# Optional: install only when using image-description integrations.
+# google-genai>=1.0
+# transformers>=4.50

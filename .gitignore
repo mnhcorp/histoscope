@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+.DS_Store
+.idea/
+.vscode/
+.venv/
+venv/
+
+# Runtime state
+.gradio/
+image_descriptions.json
+feature_notes.json
+
+# Large model and analysis artifacts are distributed separately.
+sae-models/
+models/*.pt
+models/*.pth
+models/*.safetensors
+models/*.npz
+models/*.npy
+models/*.jsonl
+cache*/
+
+# Expert-response data are not part of this release.
+*responses*.json
+study-export/

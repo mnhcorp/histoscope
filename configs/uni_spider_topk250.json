@@ -1,0 +1,24 @@
+{
+  "model_name": "model-exp49152-l2-zscore-tied-prebias-acttopk250-bs32-lr0.0001",
+  "dataset": "SPIDER-colorectal",
+  "encoder": "UNI",
+  "seed": 42,
+  "input_dim": 1024,
+  "hidden_dim": 49152,
+  "activation": "topk",
+  "topk_k": 250,
+  "tie_weights": true,
+  "use_pre_bias": true,
+  "learning_rate": 0.0001,
+  "num_epochs": 2,
+  "batch_size": 32,
+  "preprocessing": {
+    "zscore": true,
+    "l2_normalize": true,
+    "test_uses_train_statistics": true
+  },
+  "recorded_final_metrics": {
+    "reconstruction_loss": 0.00013156334171071649,
+    "average_active_features": 250.0
+  }
+}

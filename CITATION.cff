@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use Histoscope, please cite the workshop paper."
+title: "Histoscope"
+type: software
+authors:
+  - family-names: Hossain
+    given-names: Mirza Nasir
+  - family-names: Bell
+    given-names: Sarah L.
+  - family-names: Bryson
+    given-names: Gareth
+  - family-names: Harris-Birtill
+    given-names: David
+repository-code: "https://github.com/mnhcorp/histoscope"
+url: "https://github.com/mnhcorp/histoscope"
+license: GPL-3.0-only
+preferred-citation:
+  type: conference-paper
+  title: "Histoscope: Expert-Grounded Inspection of Sparse Autoencoder Features in Histopathology Foundation Models"
+  authors:
+    - family-names: Hossain
+      given-names: Mirza Nasir
+    - family-names: Bell
+      given-names: Sarah L.
+    - family-names: Bryson
+      given-names: Gareth
+    - family-names: Harris-Birtill
+      given-names: David
+  conference:
+    name: "Mechanistic Interpretability Workshop at the 43rd International Conference on Machine Learning"
+  year: 2026
