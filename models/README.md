@@ -13,9 +13,11 @@ Both repositories are gated and remain subject to their own non-commercial terms
 
 ## Download the paper checkpoint
 
-From the Histoscope repository root:
+Before downloading, open the model repository, accept its research-use gate, and authenticate the CLI. Then, from the Histoscope repository root:
 
 ```bash
+hf auth login
+
 hf download mnhcorp/histoscope-uni-spider-sae \
   --local-dir sae-models/uni/spider/model-exp49152-l2-zscore-tied-prebias-acttopk250-bs32-lr0.0001
 
